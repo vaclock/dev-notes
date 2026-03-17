@@ -1,0 +1,3 @@
+# Lighthouse 满分指南
+
+开启 Gzip，优化图片格式（WebP），代码分割...

@@ -1,0 +1,15 @@
+{
+  "name": "dev-notes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev notes --host 0.0.0.0 --port 5173",
+    "build": "vitepress build notes",
+    "preview": "vitepress preview notes --host 0.0.0.0 --port 4173"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0",
+    "vitepress": "^1.6.3"
+  }
+}

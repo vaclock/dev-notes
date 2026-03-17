@@ -1,0 +1,130 @@
+:root {
+  /* Obsidian Callout 边框 and 基础背景 */
+  --callout-border: color-mix(in srgb, var(--vp-c-border) 70%, transparent);
+
+  /* 个性化品牌色 (以翠绿色为主色调) */
+  --vp-c-brand-1: #10b981;
+  --vp-c-brand-2: #059669;
+  --vp-c-brand-3: #047857;
+  --vp-c-brand-soft: rgba(16, 185, 129, 0.14);
+
+  /* 排版优化: 字体 */
+  --vp-font-family-base: "Inter", "Helvetica Neue", "Helvetica", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+/* 深色模式下的品牌色微调 */
+.dark {
+  --vp-c-brand-1: #34d399;
+  --vp-c-brand-2: #10b981;
+  --vp-c-brand-3: #059669;
+  --vp-c-brand-soft: rgba(52, 211, 153, 0.16);
+}
+
+/* 页面和排版进一步优化 */
+.vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* 仅在桌面端（宽屏）隐藏左侧侧边栏，并让内容居中 */
+@media (min-width: 960px) {
+  .VPSidebar {
+    display: none !important;
+  }
+
+  .VPContent.has-sidebar {
+    padding-left: 0 !important;
+  }
+
+  .VPContent .container {
+    max-width: 1104px !important;
+    /* 确保容器内有足够空间给 content 和 aside */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .VPContent .content {
+    /* 限制文章内容宽度，避免挤占 aside 空间 */
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  
+  /* 强制显示右侧 Aside 容器 */
+  .VPDocAside {
+    display: block !important;
+    padding-left: 32px;
+  }
+  
+  /* 调整大纲（右侧目录）的样式，使其看起来更像文章内部的常驻目录 */
+  .VPDocAsideOutline .root {
+    display: block !important;
+  }
+
+  .VPDocAsideOutline .content {
+    border-left: 1px solid var(--vp-c-divider);
+    padding-left: 16px;
+  }
+
+  .VPDocAsideOutline .outline-link {
+    color: var(--vp-c-text-2);
+    transition: color 0.25s;
+  }
+
+  .VPDocAsideOutline .outline-link:hover,
+  .VPDocAsideOutline .outline-link.active {
+    color: var(--vp-c-brand-1);
+  }
+}
+
+/* 移动端（窄屏）保留默认的导航逻辑，确保汉堡菜单可见 */
+@media (max-width: 959px) {
+  .VPNavBarHamburger {
+    display: flex !important;
+  }
+  
+  .VPLocalNav {
+    display: flex !important;
+  }
+}
+
+.vp-doc p {
+  line-height: 1.7;
+}
+
+.callout {
+  border: 1px solid var(--callout-border);
+  border-left-width: 4px;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 16px 0;
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 80%, transparent);
+}
+
+.callout-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.callout[data-callout='note'] {
+  border-left-color: var(--vp-c-brand-1);
+}
+
+.callout[data-callout='tip'],
+.callout[data-callout='success'] {
+  border-left-color: var(--vp-c-green-1);
+}
+
+.callout[data-callout='info'] {
+  border-left-color: var(--vp-c-indigo-1);
+}
+
+.callout[data-callout='warning'] {
+  border-left-color: var(--vp-c-yellow-1);
+}
+
+.callout[data-callout='danger'],
+.callout[data-callout='error'],
+.callout[data-callout='bug'] {
+  border-left-color: var(--vp-c-red-1);
+}

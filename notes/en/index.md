@@ -8,6 +8,9 @@ Here is my personal knowledge base, a collection of technical reflections, bug t
 
 ## Knowledge Areas
 
+### [AI Agent](/en/agent/)
+Practices and reflections on LLM applications, agent architecture design, and Prompt Engineering.
+
 ### [Architecture](/en/architecture/)
 Objective analysis of the underlying design philosophy and "why it is designed this way" for frontend frameworks, runtime environments, multi-threading architectures, and engineering tools.
 

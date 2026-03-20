@@ -77,6 +77,7 @@ function buildSidebar() {
 
   // 为每个顶级目录单独生成侧边栏
   return {
+    '/agent/': buildSidebarItemsFromDir(rootDirAbs, 'agent'),
     '/architecture/': buildSidebarItemsFromDir(rootDirAbs, 'architecture'),
     '/framework/': buildSidebarItemsFromDir(rootDirAbs, 'framework'),
     '/frontend/': buildSidebarItemsFromDir(rootDirAbs, 'frontend'),
@@ -91,6 +92,7 @@ function buildEnSidebar() {
   const rootDirAbs = join(process.cwd(), 'notes/en')
 
   return {
+    '/en/agent/': buildSidebarItemsFromDir(rootDirAbs, 'agent'),
     '/en/architecture/': buildSidebarItemsFromDir(rootDirAbs, 'architecture'),
     '/en/framework/': buildSidebarItemsFromDir(rootDirAbs, 'framework'),
     '/en/frontend/': buildSidebarItemsFromDir(rootDirAbs, 'frontend'),
@@ -113,6 +115,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: '首页', link: '/' },
+          { text: 'AI Agent', link: '/agent/' },
           { text: '底层设计', link: '/architecture/' },
           { text: '框架原理', link: '/framework/' },
           { text: '大前端', link: '/frontend/' },
@@ -140,6 +143,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Home', link: '/en/' },
+          { text: 'AI Agent', link: '/en/agent/' },
           { text: 'Architecture', link: '/en/architecture/' },
           { text: 'Framework', link: '/en/framework/' },
           { text: 'Frontend', link: '/en/frontend/' },
